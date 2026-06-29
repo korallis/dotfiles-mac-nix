@@ -44,8 +44,8 @@ in
   # Put user-installed CLIs on PATH. Home Manager replaced the dotfiles where these
   # lived, so restore them declaratively (sessionPath is sourced in .zshrc, so it also
   # reaches tmux panes):
-  #   ~/.local/bin  -> Claude Code            (was in ~/.zshenv)
-  #   /opt/homebrew -> brew shellenv: AXI CLIs, node, gh, …  (was in ~/.zprofile)
+  #   ~/.local/bin  -> claude, treehouse, no-mistakes  (firstmate workflow CLIs; was in ~/.zshenv)
+  #   /opt/homebrew -> brew shellenv: AXI CLIs (gh-axi, …)  (was in ~/.zprofile)
   home.sessionPath = [
     "$HOME/.local/bin"
     "/opt/homebrew/bin"
