@@ -23,7 +23,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
-          home-manager.users.yourname = import ./nix/user.nix;
+          home-manager.users.leebarry = import ./nix/user.nix;
         }
       ];
     };

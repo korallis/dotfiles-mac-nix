@@ -8,7 +8,10 @@
 
   homebrew = {
     enable = true;
-    onActivation.cleanup = "zap";
+    # "none": don't auto-uninstall Homebrew pkgs that aren't declared below — otherwise
+    # manually-installed workflow tools (gh-axi, etc.) get wiped on every rebuild.
+    # Upstream used "zap"; switch back once every brew pkg is declared here.
+    onActivation.cleanup = "none";
     taps = [ ];
     brews = [
       "autoconf"
@@ -23,9 +26,9 @@
     starship
   ];
 
-  system.primaryUser = "yourname";
-  users.users.yourname = {
-    home = "/Users/yourname";
+  system.primaryUser = "leebarry";
+  users.users.leebarry = {
+    home = "/Users/leebarry";
     shell = pkgs.zsh;
   };
 
@@ -56,7 +59,7 @@
 
   environment.systemPath = [
     "/run/current-system/sw/bin"
-    "/etc/profiles/per-user/yourname/bin"
+    "/etc/profiles/per-user/leebarry/bin"
   ];
 
   system.stateVersion = 6;
