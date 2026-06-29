@@ -98,6 +98,27 @@ require("lazy").setup({
     end,
   },
 
+  -- File explorer (sidebar tree) — toggle with <leader>e
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", "MunifTanjim/nui.nvim" },
+    cmd = "Neotree",
+    keys = {
+      { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "File explorer (toggle)" },
+      { "<leader>E", "<cmd>Neotree reveal<cr>", desc = "Reveal current file in tree" },
+    },
+    opts = {
+      close_if_last_window = true,
+      filesystem = {
+        follow_current_file = { enabled = true },
+        hijack_netrw_behavior = "open_default",
+        filtered_items = { hide_dotfiles = false, hide_gitignored = false },
+      },
+      window = { width = 32 },
+    },
+  },
+
   -- Statusline + icons
   {
     "nvim-lualine/lualine.nvim",
