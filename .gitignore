@@ -1,0 +1,10 @@
+# Nix build outputs
+result
+result-*
+
+# macOS
+.DS_Store
+
+# Neovim plugin lockfile — regenerated locally by lazy.nvim; tracking it just dirties
+# the tree on every plugin update (and a dirty tree + sudo rebuild = root-owned .git).
+files/.config/nvim/lazy-lock.json
