@@ -66,6 +66,10 @@ in
       push.autoSetupRemote = true;
       pull.rebase = true;
       rebase.updateRefs = true;
+
+      # authenticate `git push` to GitHub via the gh CLI (on PATH via Nix) —
+      # no token stored in the repo, no interactive prompt
+      credential."https://github.com".helper = "!gh auth git-credential";
     };
   };
 
