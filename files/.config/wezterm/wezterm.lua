@@ -8,7 +8,7 @@ local is_macos = wezterm.target_triple:lower():find("darwin") ~= nil
 config.color_scheme = "rose-pine-moon"
 config.max_fps = 120
 config.font = wezterm.font("Hack Nerd Font", { weight = "DemiBold" })
-config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.window_decorations = "RESIZE"
 config.window_frame = {
   font = wezterm.font("Hack Nerd Font", { weight = "Bold" }),
 }
