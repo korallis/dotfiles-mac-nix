@@ -61,6 +61,13 @@
   environment.systemPath = [
     "/run/current-system/sw/bin"
     "/etc/profiles/per-user/leebarry/bin"
+    # System-level PATH (set by nix-darwin's /etc shell init, before any Home Manager
+    # hook or session-var guard) so even a stale tmux server's new panes find the
+    # firstmate toolchain. NB: a process already running keeps its old PATH, so an
+    # existing tmux server still has to be restarted once for this to take effect.
+    "/opt/homebrew/bin"            # AXI CLIs: gh-axi, chrome-devtools-axi, lavish-axi
+    "/opt/homebrew/sbin"
+    "/Users/leebarry/.local/bin"   # claude, treehouse, no-mistakes
   ];
 
   system.stateVersion = 6;
