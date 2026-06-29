@@ -123,11 +123,13 @@ in
     keyMode = "vi";
     mouse = true;
     baseIndex = 1;               # windows start at 1, not 0
-    escapeTime = 0;              # no <Esc> delay (vim-friendly)
+    clock24 = true;              # 24-hour clock (matches Kun's config)
+    escapeTime = 10;             # tiny <Esc> delay (Kun's value; still vim-friendly)
     historyLimit = 50000;
     terminal = "tmux-256color";
     plugins = with pkgs.tmuxPlugins; [
       sensible
+      yank                       # copy to the system clipboard from copy-mode
       {
         plugin = resurrect;      # save/restore sessions (prefix C-s / C-r)
         extraConfig = "set -g @resurrect-strategy-nvim 'session'";
@@ -147,6 +149,11 @@ in
       setw -g pane-base-index 1
       set -g renumber-windows on
       set -g status-interval 5
+      # match Kun's config (from the video): modern key handling + look
+      set -g extended-keys on
+      set -g extended-keys-format csi-u
+      set -g status-position top
+      set -g pane-border-lines heavy
 
       # reload config
       bind r source-file ~/.config/tmux/tmux.conf \; display "tmux.conf reloaded"
