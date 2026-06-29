@@ -23,6 +23,7 @@ in
     tree
     bun
     nodejs            # runtime for the AXI CLIs (gh-axi, lavish-axi, …); brew's node was zapped
+    neovim            # editor; config lives in files/.config/nvim (symlinked below)
     rustup
     zip
     unzip
@@ -220,5 +221,6 @@ in
 
   home.file = {
     ".config/wezterm".source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/files/.config/wezterm";
+    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/files/.config/nvim";
   };
 }

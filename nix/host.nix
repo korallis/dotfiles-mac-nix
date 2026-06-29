@@ -19,6 +19,7 @@
     casks = [
       "wezterm"
       "amethyst"
+      "opensuperwhisper"   # local Whisper push-to-talk dictation (menu-bar app)
     ];
   };
 
