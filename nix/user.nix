@@ -223,6 +223,12 @@ in
     };
     initContent = ''
       bindkey '^f' autosuggest-accept
+
+      # Ensure user-installed CLIs are on PATH for EVERY interactive shell, including
+      # tmux panes that inherit Home Manager's __HM_SESS_VARS_SOURCED guard (which
+      # otherwise skips re-applying home.sessionPath). This is what lets the firstmate
+      # captain find treehouse / no-mistakes / the AXI CLIs and spawn crewmate windows.
+      export PATH="$HOME/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
     '';
   };
 
